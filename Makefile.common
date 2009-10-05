@@ -1,0 +1,92 @@
+# -*- Makefile -*-
+#
+# Copyright 2004,2006,2007,2008 Free Software Foundation, Inc.
+# 
+# This file is part of GNU Radio
+# 
+# GNU Radio is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3, or (at your option)
+# any later version.
+# 
+# GNU Radio is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with GNU Radio; see the file COPYING.  If not, write to
+# the Free Software Foundation, Inc., 51 Franklin Street,
+# Boston, MA 02110-1301, USA.
+# 
+
+AM_CXXFLAGS = @autoconf_default_CXXFLAGS@
+
+# includes
+grincludedir = $(includedir)/gnuradio
+
+# swig includes
+swigincludedir = $(grincludedir)/swig
+
+# Install the gnuradio stuff in the appropriate subdirectory
+# This usually ends up at:
+#   ${prefix}/lib/python${python_version}/site-packages/gnuradio
+
+grpythondir = $(pythondir)/gnuradio
+grpyexecdir = $(pyexecdir)/gnuradio
+
+# Install the non-gnuradio usrp stuff in the appropriate subdirectory
+# This usually ends up at:
+#   ${prefix}/lib/python${python_version}/site-packages/usrpm
+
+usrppythondir = $(pythondir)/usrpm
+usrppyexecdir = $(pyexecdir)/usrpm
+
+# when including for compilation from pre-installed libraries and such,
+# need to make sure those are put last on the compile command
+WITH_INCLUDES = @with_INCLUDES@
+WITH_SWIG_INCLUDES = @with_SWIG_INCLUDES@
+
+# swig flags
+SWIGPYTHONFLAGS = -fvirtual -python -modern
+
+# How to link in the top-level omnithreads library from inside the tree
+OMNITHREAD_INCLUDES = @omnithread_INCLUDES@
+OMNITHREAD_LA = @omnithread_LA@
+
+# Where to find gnuradio include files in the current build tree
+# top_srcdir for original stuff, top_builddir for generated files
+GNURADIO_INCLUDES = @gnuradio_core_INCLUDES@
+
+# How to link in GNU Radio core library from inside the tree
+GNURADIO_CORE_LA = @gnuradio_core_LA@
+
+# This is a dependency for many swig operations
+GNURADIO_I = @gnuradio_core_I@
+
+# How to link in the USRP library from inside the tree
+USRP_INCLUDES = @usrp_INCLUDES@
+USRP_LA = @usrp_LA@
+
+# How to link in usrp-inband library from inside the tree
+USRP_INBAND_INCLUDES = @usrp_inband_INCLUDES@
+USRP_INBAND_LA = @usrp_inband_LA@
+
+# How to link the PMT library from inside the tree
+PMT_INCLUDES = @pmt_INCLUDES@
+PMT_LA = @pmt_LA@
+
+# How to link the mblock library from inside the tree
+MBLOCK_INCLUDES = @mblock_INCLUDES@
+MBLOCK_LA = @mblock_LA@
+
+# This used to be set in configure.ac but is now defined here for all 
+# Makefiles when this fragment is included.
+STD_DEFINES_AND_INCLUDES=$(DEFINES) $(OMNITHREAD_INCLUDES) $(GNURADIO_INCLUDES) $(BOOST_CFLAGS)
+
+# Fix for BSD make not defining $(RM).  We define it now in configure.ac
+# using AM_PATH_PROG, but now here have to add a -f to be like GNU make
+RM=$(RM_PROG) -f
+
+# Base directory for example applications
+exampledir = $(datadir)/gnuradio/examples

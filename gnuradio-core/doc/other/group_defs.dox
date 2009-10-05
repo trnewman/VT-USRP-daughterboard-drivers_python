@@ -1,0 +1,86 @@
+/*!
+ * \defgroup block Signal Processing Blocks
+ * These are the signal processing blocks...
+ * @{
+ */
+
+/*!
+ * \defgroup source Signal Sources
+ * signal sources docs...
+ */
+
+/*!
+ * \defgroup sink Signal Sinks
+ * docs for sinks...
+ */
+
+/*!
+ * \defgroup filter Filters
+ */
+
+/*!
+ * \defgroup converter Type Conversions
+ */
+
+/*!
+ * \defgroup level Signal Level Control
+ */
+
+/*!
+ * \defgroup clock Signal Clock Synchronization
+ */
+
+/*!
+ * \defgroup dft Fourier Transformation
+ */
+
+/*!
+ * \defgroup synch Synchronization
+ */
+
+/*! @} */
+
+/*! \defgroup filter_design Digital Filter Design		*/
+/*! \defgroup graphical Graphical Utilities		*/
+/*! \defgroup encdec Voice Encoders and Decoders	*/
+/*! \defgroup coding Information Coding and Decoding			*/
+/*! \defgroup modulation Signal Modulation			*/
+/*! \defgroup demodulation Signal Demodulation			*/
+/*! \defgroup flow Samples Flow Control			*/
+
+/*! \defgroup math	Mathmatics			*/
+/*! \defgroup tools Tools				*/
+/*! \defgroup misc Miscellaneous				*/
+/*! \defgroup internal Implementation Details		*/
+
+/*! \defgroup base Misc Common Base Classes			*/
+/*!
+ * \defgroup applications Applications
+ * These are some applications build using gnuradio...
+ * @{
+ */
+
+/*!
+ * \defgroup atsc ATSC
+ * ATSC Applications...
+ */
+
+/*!
+ * \defgroup radar Radar
+ * Radar Applications...
+ */
+
+/*!
+ * \defgroup pager Pager 
+ * Pager Applications
+ */
+
+/*!
+ * \defgroup sounder	Sounder
+ * Channel Sounder
+ */
+
+/*! @} */
+
+/*! \defgroup usrp USRP	*/
+/*! \defgroup hardware Hardware				*/
