@@ -63,6 +63,7 @@ import db_tv_rx
 import db_wbx
 import db_dtt754
 import db_dtt768
+import db_rfic
 
 def _look_for_usrp(which):
     """
@@ -438,7 +439,8 @@ def pick_tx_subdevice(u):
                            usrp_dbid.FLEX_900_TX,
                            usrp_dbid.FLEX_1200_TX,
                            usrp_dbid.FLEX_2400_TX,
-                           usrp_dbid.BASIC_TX))
+                           usrp_dbid.BASIC_TX,
+                           usrp_dbid.RFIC_TX))
 
 def pick_rx_subdevice(u):
     """
@@ -456,7 +458,8 @@ def pick_rx_subdevice(u):
                            usrp_dbid.TV_RX_REV_2,
                            usrp_dbid.DBS_RX,
                            usrp_dbid.DBS_RX_REV_2_1,
-                           usrp_dbid.BASIC_RX))
+                           usrp_dbid.BASIC_RX,
+                           usrp_dbid.RFIC_RX))
 
 def pick_subdev(u, candidates):
     """

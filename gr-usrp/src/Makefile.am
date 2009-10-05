@@ -55,6 +55,7 @@ ourpython_PYTHON =			\
 	db_tv_rx.py			\
 	db_dtt754.py			\
 	db_dtt768.py			\
+	db_rfic.py			\
 	flexrf_debug_gui.py		\
 	tx_debug_gui.py			\
 	usrp.py				\

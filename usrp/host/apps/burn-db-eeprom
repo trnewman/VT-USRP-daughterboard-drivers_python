@@ -66,6 +66,7 @@ daughterboards = {
     'lftx'            : ((LF_TX, 0x0000),           None),
     'lfrx'            : (None,                      (LF_RX, 0x0000)),
     'wbx_lo'          : ((WBX_LO_TX, 0x0000),       (WBX_LO_RX, 0x0000)),
+    'rfic'            : ((RFIC_TX, 0x0000),         (RFIC_RX, 0x0000)),
     'experimental_tx' : ((EXPERIMENTAL_TX, 0x0000), None),
     'experimental_rx' : (None,                      (EXPERIMENTAL_RX, 0x0000)),
     }
